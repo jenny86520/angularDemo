@@ -1,0 +1,13 @@
+<h5>內嵌繫結</h5>
+<p>{{name}}</p>
+
+<h5>屬性繫結</h5>
+<input [value]="name">
+<button [disabled]="propertyFlag">Click</button>
+
+<h5>事件繫結</h5>
+<button (click)="changeName()">Change Name</button>
+
+<h5>雙向繫結</h5>
+<input [(ngModel)]="ngModuleData">
+{{ngModuleData}}
