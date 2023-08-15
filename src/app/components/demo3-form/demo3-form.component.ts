@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ElementRef, ContentChild } from '@angular/core';
 import { Person } from 'src/app/interfaces/person';
 
 @Component({
@@ -9,6 +9,8 @@ import { Person } from 'src/app/interfaces/person';
 export class Demo3FormComponent implements OnInit {
   @Input() person: Person = { account: '', password: '' };
   @Output() submit = new EventEmitter<Person>();
+
+  @ContentChild('contentTarget') content?: ElementRef;
 
   person_: Person = { account: '', password: '' };
 

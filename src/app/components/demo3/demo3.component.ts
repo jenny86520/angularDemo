@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Person } from 'src/app/interfaces/person';
 
 @Component({
@@ -8,6 +8,8 @@ import { Person } from 'src/app/interfaces/person';
 })
 export class Demo3Component implements OnInit {
   person: Person = { account: 'Aka', password: '1234' };
+
+  @ViewChild('htmlTarget') target?: ElementRef;
 
   constructor() { }
 

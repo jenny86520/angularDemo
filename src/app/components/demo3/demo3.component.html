@@ -1,8 +1,10 @@
 <h4>子 Component</h4>
-<app-demo3-form [person]="person" (submit)="setPerson($event)"></app-demo3-form>
+<app-demo3-form [person]="person" (submit)="setPerson($event)">
+  <p #contentTarget>something from parent</p>
+</app-demo3-form>
 
 <h4>父 Component</h4>
 <p>帳號：</p>
-<p>{{person.account}}</p>
+<p #htmlTarget>{{person.account}}</p>
 <p>密碼：</p>
 <p>{{person.password}}</p>
