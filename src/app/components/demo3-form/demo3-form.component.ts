@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ElementRef, ContentChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ElementRef, ContentChild, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, SimpleChanges } from '@angular/core';
 import { Person } from 'src/app/interfaces/person';
 
 @Component({
@@ -6,7 +6,7 @@ import { Person } from 'src/app/interfaces/person';
   templateUrl: './demo3-form.component.html',
   styleUrls: ['./demo3-form.component.css']
 })
-export class Demo3FormComponent implements OnInit {
+export class Demo3FormComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   @Input() person: Person = { account: '', password: '' };
   @Output() submit = new EventEmitter<Person>();
 
@@ -14,10 +14,34 @@ export class Demo3FormComponent implements OnInit {
 
   person_: Person = { account: '', password: '' };
 
-  constructor() { }
-
+  // Lifecycle
+  constructor() {
+    console.log('Constructor');
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges', changes);
+  }
   ngOnInit(): void {
     this.person_ = { ...this.person };
+    console.log('ngOnInit');
+  }
+  ngDoCheck() {
+    console.log('ngDoCheck');
+  }
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit');
+  }
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked');
+  }
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit');
+  }
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked');
+  }
+  ngOnDestroy() {
+    console.log('ngOnDestroy');
   }
 
   formClick() {
