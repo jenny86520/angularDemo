@@ -1,0 +1,42 @@
+<h4>NgStyle</h4>
+<p style="font-size: 15px;">NgStyle</p>
+<p [ngStyle]="{'font-size': 15+ count + 'px' }">NgStyle</p>
+<button (click)="add()">+</button>
+<button (click)="sub()">-</button>
+
+<h4>NgClass</h4>
+<p class="red">NgClass</p>
+<p [ngClass]="{'red': isRed}">NgClass</p>
+<button (click)="changeClass()">Change Class</button>
+
+<h4>NgIf</h4>
+<p *ngIf="ngIfFlag; else other">ngIf is true</p>
+<p *ngIf="!ngIfFlag">ngIf is false</p>
+<ng-template #other>
+  Other Show!
+</ng-template>
+<button (click)="changeNgIfFlag()">Change NgIf</button>
+
+<h4>NgFor</h4>
+<p *ngFor="let i of array">{{i}}</p>
+<input [(ngModel)]="number">
+<button (click)="push()">push</button>
+<button (click)="remove()">remove</button>
+
+<h4>NgSwitch</h4>
+<div [ngSwitch]="count">
+  <p *ngSwitchCase="0">0</p>
+  <p *ngSwitchCase="1">1</p>
+  <p *ngSwitchCase="2">2</p>
+</div>
+<button (click)="add()">+</button>
+<button (click)="sub()">-</button>
+
+<h4>NgNonBindable</h4>
+<p ngNonBindable>This should not evaluate: {{ 1 + 1 }}</p>
+
+<h4>自定義</h4>
+<p appHighlight>Static Highlight</p>
+<p [appHighlight]="highlightColor">Dynamic Highlight</p>
+<button (click)="changeHighlightColor()">Change Highlight Color</button>
+
