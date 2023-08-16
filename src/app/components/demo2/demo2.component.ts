@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-demo2',
   templateUrl: './demo2.component.html',
-  styleUrls: ['./demo2.component.css']
+  styleUrls: ['./demo2.component.css'],
 })
 export class Demo2Component implements OnInit {
   count: number = 0;
@@ -12,10 +12,9 @@ export class Demo2Component implements OnInit {
   array: number[] = [1, 2, 3, 4, 5];
   number: string = '0';
   highlightColor = 'yellow';
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   add() {
     this.count++;
@@ -37,7 +36,7 @@ export class Demo2Component implements OnInit {
   }
 
   remove() {
-    this.array = this.array.filter(x => x !== +this.number);
+    this.array = this.array.filter((x) => x !== +this.number);
   }
 
   changeHighlightColor() {

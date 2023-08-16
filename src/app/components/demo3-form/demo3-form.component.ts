@@ -1,12 +1,38 @@
-import { Component, EventEmitter, Input, OnInit, Output, ElementRef, ContentChild, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ElementRef,
+  ContentChild,
+  OnChanges,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  OnDestroy,
+  SimpleChanges,
+} from '@angular/core';
 import { Person } from 'src/app/interfaces/person.interface';
 
 @Component({
   selector: 'app-demo3-form',
   templateUrl: './demo3-form.component.html',
-  styleUrls: ['./demo3-form.component.css']
+  styleUrls: ['./demo3-form.component.css'],
 })
-export class Demo3FormComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+export class Demo3FormComponent
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy
+{
   @Input() person: Person = { account: '', password: '' };
   @Output() submit = new EventEmitter<Person>();
 

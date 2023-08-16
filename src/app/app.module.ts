@@ -19,12 +19,8 @@ import { Demo3FormComponent } from './components/demo3-form/demo3-form.component
     Demo3Component,
     Demo3FormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

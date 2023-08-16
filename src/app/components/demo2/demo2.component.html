@@ -1,25 +1,23 @@
 <h4>NgStyle</h4>
-<p style="font-size: 15px;">NgStyle</p>
-<p [ngStyle]="{'font-size': 15+ count + 'px' }">NgStyle</p>
+<p style="font-size: 15px">NgStyle</p>
+<p [ngStyle]="{ 'font-size': 15 + count + 'px' }">NgStyle</p>
 <button (click)="add()">+</button>
 <button (click)="sub()">-</button>
 
 <h4>NgClass</h4>
 <p class="red">NgClass</p>
-<p [ngClass]="{'red': isRed}">NgClass</p>
+<p [ngClass]="{ red: isRed }">NgClass</p>
 <button (click)="changeClass()">Change Class</button>
 
 <h4>NgIf</h4>
 <p *ngIf="ngIfFlag; else other">ngIf is true</p>
 <p *ngIf="!ngIfFlag">ngIf is false</p>
-<ng-template #other>
-  Other Show!
-</ng-template>
+<ng-template #other> Other Show! </ng-template>
 <button (click)="changeNgIfFlag()">Change NgIf</button>
 
 <h4>NgFor</h4>
-<p *ngFor="let i of array">{{i}}</p>
-<input [(ngModel)]="number">
+<p *ngFor="let i of array">{{ i }}</p>
+<input [(ngModel)]="number" />
 <button (click)="push()">push</button>
 <button (click)="remove()">remove</button>
 
@@ -39,4 +37,3 @@
 <p appHighlight>Static Highlight</p>
 <p [appHighlight]="highlightColor">Dynamic Highlight</p>
 <button (click)="changeHighlightColor()">Change Highlight Color</button>
-

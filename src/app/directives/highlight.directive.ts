@@ -1,13 +1,12 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[appHighlight]',
 })
 export class HighlightDirective {
   @Input() appHighlight = '';
 
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight(this.appHighlight || 'yellow');
