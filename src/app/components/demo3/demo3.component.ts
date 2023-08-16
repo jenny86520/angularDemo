@@ -8,7 +8,7 @@ import { Person } from 'src/app/interfaces/person.interface';
 })
 export class Demo3Component implements OnInit {
   person: Person = { account: 'Aka', password: '1234' };
-
+  notes: string[] = ['some note', ' ', '   ...', 'end note  '];
   @ViewChild('htmlTarget') target?: ElementRef;
 
   constructor() {}

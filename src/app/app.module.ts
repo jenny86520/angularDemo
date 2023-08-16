@@ -9,6 +9,7 @@ import { Demo2Component } from './components/demo2/demo2.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { Demo3Component } from './components/demo3/demo3.component';
 import { Demo3FormComponent } from './components/demo3-form/demo3-form.component';
+import { Demo3InteractionComponent } from './components/demo3-interaction/demo3-interaction.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { Demo3FormComponent } from './components/demo3-form/demo3-form.component
     HighlightDirective,
     Demo3Component,
     Demo3FormComponent,
+    Demo3InteractionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

@@ -39,7 +39,6 @@ export class Demo3FormComponent
   @ContentChild('contentTarget') content?: ElementRef;
 
   person_: Person = { account: '', password: '' };
-
   // Lifecycle
   constructor() {
     console.log('Constructor');

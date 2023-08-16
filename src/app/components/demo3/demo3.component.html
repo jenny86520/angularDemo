@@ -2,6 +2,9 @@
 <app-demo3-form [person]="person" (submit)="setPerson($event)">
   <p #contentTarget>something from parent</p>
 </app-demo3-form>
+<p *ngFor="let note of notes">
+  <app-demo3-interaction [note]="note"></app-demo3-interaction>
+</p>
 
 <h4>父 Component</h4>
 <p>帳號：</p>
