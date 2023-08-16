@@ -1,4 +1,4 @@
-import { Person } from './person';
+import { Person } from './person.interface';
 
 describe('Person', () => {
   it('should create an instance', () => {

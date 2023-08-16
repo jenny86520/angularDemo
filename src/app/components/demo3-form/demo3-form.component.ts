@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ElementRef, ContentChild, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, SimpleChanges } from '@angular/core';
-import { Person } from 'src/app/interfaces/person';
+import { Person } from 'src/app/interfaces/person.interface';
 
 @Component({
   selector: 'app-demo3-form',

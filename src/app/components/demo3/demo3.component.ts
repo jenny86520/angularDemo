@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Person } from 'src/app/interfaces/person';
+import { Person } from 'src/app/interfaces/person.interface';
 
 @Component({
   selector: 'app-demo3',
