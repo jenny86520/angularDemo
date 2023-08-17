@@ -11,7 +11,7 @@ import { Demo3Component } from './components/demo3/demo3.component';
 import { Demo3FormComponent } from './components/demo3-form/demo3-form.component';
 import { Demo3InteractionComponent } from './components/demo3-interaction/demo3-interaction.component';
 import { Demo4Component } from './components/demo4/demo4.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,7 @@ import { Demo4Component } from './components/demo4/demo4.component';
     Demo3InteractionComponent,
     Demo4Component,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -10,10 +10,14 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class Demo4Component implements OnInit {
   people!: Person[];
+  peopleFromApi!: Person[];
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.people = this.apiService.getPeople();
+    this.apiService.getApiPeople().subscribe(({ data }) => {
+      this.peopleFromApi = data;
+    });
   }
 }

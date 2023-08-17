@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../interfaces/person.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +13,17 @@ export class ApiService {
     { account: 'User3', password: '3333' },
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getPeople() {
     return this.people;
+  }
+
+  getApiPeople() {
+    return this.http.get<{ data: Person[] }>('/api/data.json');
+  }
+
+  postApiPeople() {
+    return this.http.post<Person[]>('/api/data.json', this.people);
   }
 }

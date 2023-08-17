@@ -1,1 +1,6 @@
 <p *ngFor="let person of people">{{ person.account }} {{ person.password }}</p>
+
+<h4>Use HttpClient</h4>
+<p *ngFor="let person of peopleFromApi">
+  {{ person.account }} {{ person.password }}
+</p>
