@@ -12,6 +12,8 @@ import { Demo3FormComponent } from './components/demo3-form/demo3-form.component
 import { Demo3InteractionComponent } from './components/demo3-interaction/demo3-interaction.component';
 import { Demo4Component } from './components/demo4/demo4.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Demo5Component } from './components/demo5/demo5.component';
+import { WordPipe } from './pipes/word.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     Demo3FormComponent,
     Demo3InteractionComponent,
     Demo4Component,
+    Demo5Component,
+    WordPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

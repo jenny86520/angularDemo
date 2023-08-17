@@ -1,0 +1,14 @@
+<h4>uppercase</h4>
+<p>Origin: {{ msg }}</p>
+<p>After pipe: {{ msg | uppercase }}</p>
+
+<h4>date</h4>
+<p>Origin: {{ dateTimeNow }}</p>
+<p>After pipe: {{ dateTimeNow | date }}</p>
+<p>After pipe with short: {{ dateTimeNow | date : "short" }}</p>
+<p>After pipe with yyyy/MM/dd: {{ dateTimeNow | date : "yyyy/MM/dd" }}</p>
+
+<h4>自定義</h4>
+<p>Origin: {{ msg }}</p>
+<p>After pipe: {{ msg | word }}</p>
+<p>After pipe with xxx: {{ msg | word : "xxx" }}</p>
