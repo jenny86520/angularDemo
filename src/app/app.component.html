@@ -1,17 +1,39 @@
-<h1>Component_demo1</h1>
-<app-demo1></app-demo1>
+<label for="select">選擇 Template：</label>
+<select name="select" [(ngModel)]="selectTemplate">
+  <option [ngValue]="0">Component_demo1</option>
+  <option [ngValue]="1">Directive_demo2</option>
+  <option [ngValue]="2">Component 溝通_demo3</option>
+  <option [ngValue]="3">Service_demo4</option>
+  <option [ngValue]="4">Pipe_demo5</option>
+  <option [ngValue]="5">Template Driven Form</option>
+</select>
 
-<h1>Directive_demo2</h1>
-<app-demo2></app-demo2>
+<ng-container *ngIf="selectTemplate === 0">
+  <h1>Component_demo1</h1>
+  <app-demo1></app-demo1>
+</ng-container>
 
-<h1>Component 溝通_demo3</h1>
-<app-demo3></app-demo3>
+<ng-container *ngIf="selectTemplate === 1">
+  <h1>Directive_demo2</h1>
+  <app-demo2></app-demo2>
+</ng-container>
 
-<h1>Service_demo4</h1>
-<app-demo4></app-demo4>
+<ng-container *ngIf="selectTemplate === 2">
+  <h1>Component 溝通_demo3</h1>
+  <app-demo3></app-demo3>
+</ng-container>
 
-<h1>Pipe_demo5</h1>
-<app-demo5></app-demo5>
+<ng-container *ngIf="selectTemplate === 3">
+  <h1>Service_demo4</h1>
+  <app-demo4></app-demo4>
+</ng-container>
 
-<h1>Template Driven Form</h1>
-<app-template-driven-form></app-template-driven-form>
+<ng-container *ngIf="selectTemplate === 4">
+  <h1>Pipe_demo5</h1>
+  <app-demo5></app-demo5>
+</ng-container>
+
+<ng-container *ngIf="selectTemplate === 5">
+  <h1>Template Driven Form</h1>
+  <app-template-driven-form></app-template-driven-form>
+</ng-container>
