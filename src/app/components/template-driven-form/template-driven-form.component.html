@@ -1,0 +1,21 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <div ngModelGroup="person">
+    <p>帳號：</p>
+    <input name="account" ngModel #account_="ngModel" required />
+    <p *ngIf="account_.invalid && account_.touched" style="color: red">
+      帳號必填!
+    </p>
+
+    <p>密碼：</p>
+    <input name="password" ngModel #password_="ngModel" required />
+    <p *ngIf="password_.invalid && password_.touched" style="color: red">
+      密碼必填!
+    </p>
+  </div>
+  <br />
+  <button type="submit">Submit</button>
+  <button type="button" (click)="reset()">Reset</button>
+  <br />
+  <button type="button" (click)="setValue()">Set All</button>
+  <button type="button" (click)="setAccount()">Set Account</button>
+</form>

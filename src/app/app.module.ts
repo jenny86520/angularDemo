@@ -14,6 +14,7 @@ import { Demo4Component } from './components/demo4/demo4.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Demo5Component } from './components/demo5/demo5.component';
 import { WordPipe } from './pipes/word.pipe';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { WordPipe } from './pipes/word.pipe';
     Demo4Component,
     Demo5Component,
     WordPipe,
+    TemplateDrivenFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
