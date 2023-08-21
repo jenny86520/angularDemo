@@ -16,6 +16,7 @@ import { Demo5Component } from './components/demo5/demo5.component';
 import { WordPipe } from './pipes/word.pipe';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { DefaultComponent } from './components/default/default.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     WordPipe,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
+    DefaultComponent,
   ],
   imports: [
     BrowserModule,
