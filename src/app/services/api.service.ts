@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../interfaces/person.interface';
 import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +26,9 @@ export class ApiService {
 
   postApiPeople() {
     return this.http.post<Person[]>('/api/data.json', this.people);
+  }
+
+  getValidationResult(value: string): Observable<boolean> {
+    return of(!['1111', '2222'].includes(value));
   }
 }

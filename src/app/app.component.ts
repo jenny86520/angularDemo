@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularDemo';
-  selectTemplate: number = 0;
+  selectTemplate: number = 0
   templates: string[] = [
     'Component_demo1',
     'Directive_demo2',
@@ -15,5 +15,6 @@ export class AppComponent {
     'Service_demo4',
     'Pipe_demo5',
     'Template Driven Form',
+    'Reactive Form',
   ];
 }

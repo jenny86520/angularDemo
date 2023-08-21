@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+  <div formGroupName="person">
+    <p>帳號：</p>
+    <input formControlName="account" />
+    <p *ngIf="account?.invalid" style="color: red">
+      {{ account?.errors?.required ? "帳號必填!" : "不是 User1" }}
+    </p>
+
+    <p>密碼：</p>
+    <input formControlName="password" passwordValidator />
+    <p *ngIf="form.get('person')?.get('password')?.invalid" style="color: red">
+      {{
+        form.get("person")?.get("password")?.errors?.required
+          ? "密碼必填!"
+          : "密碼不夠安全!"
+      }}
+    </p>
+  </div>
+
+  <h4>FormArray</h4>
+  <div formArrayName="member">
+    <input *ngFor="let user of member; let i = index" [formControlName]="i" />
+  </div>
+</form>
