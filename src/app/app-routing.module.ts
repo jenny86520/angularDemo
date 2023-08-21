@@ -8,6 +8,7 @@ import { Demo5Component } from './components/demo5/demo5.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { DefaultComponent } from './components/default/default.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -22,12 +23,13 @@ const routes: Routes = [
   { path: 'Pipe_demo5', component: Demo5Component },
   {
     path: 'Form',
+    canActivate: [AuthGuard],
     children: [
       { path: 'Template Driven Form', component: TemplateDrivenFormComponent },
       { path: 'Reactive Form', component: ReactiveFormComponent },
     ],
   },
-  { path: 'Router_Default/:id', component: DefaultComponent},
+  { path: 'Router_Default/:id', component: DefaultComponent },
   { path: '**', component: DefaultComponent },
 ];
 
