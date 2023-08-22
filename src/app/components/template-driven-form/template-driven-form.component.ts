@@ -21,6 +21,12 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   reset() {
     this.form.reset();
+    console.log(this.form);
+  }
+
+  resetForm() {
+    this.form.resetForm();
+    console.log(this.form);
   }
 
   setValue() {
