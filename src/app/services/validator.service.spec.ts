@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ValidatorService } from './validator.service';
+import { PasswordValidator } from './validator.service';
 
-describe('ValidatorService', () => {
-  let service: ValidatorService;
+describe('PasswordValidator', () => {
+  let service: PasswordValidator;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ValidatorService);
+    service = TestBed.inject(PasswordValidator);
   });
 
   it('should be created', () => {
