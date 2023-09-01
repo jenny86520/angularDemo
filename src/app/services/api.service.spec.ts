@@ -29,69 +29,32 @@ describe('ApiService', () => {
 
   // 因是以靜態檔案模擬後端回傳，故會進入 error，僅演示打 API 的測試作法
   it('#getApiPeople should return people data from observable', (done: DoneFn) => {
-    service
-      .getApiPeople()
-      .pipe(finalize(() => done()))
-      .subscribe(
-        ({ data }) => {
-          expect(data).toEqual([
-            { account: 'User4', password: '4444' },
-            { account: 'User5', password: '5555' },
-            { account: 'User6', password: '6666' },
-          ]);
-        },
-        (err: HttpErrorResponse) => {
-          console.log(`getApiPeople: ${err.status} ${err.statusText}`);
-          expect(err.status).toEqual(404);
-        }
-      );
+    service.getApiPeople().subscribe(({ data }) => {
+      expect(data).toEqual([
+        { account: 'User4', password: '4444' },
+        { account: 'User5', password: '5555' },
+        { account: 'User6', password: '6666' },
+      ]);
+      done();
+    }, done.fail);
   });
 
   it('#getValidationResult should return false from observable', (done: DoneFn) => {
-    service
-      .getValidationResult('1111')
-      .pipe(finalize(() => done()))
-      .subscribe(
-        (result) => {
-          expect(result).toBeFalse();
-        },
-        (err: HttpErrorResponse) => {
-          console.log(
-            `getValidationResult('1111'): ${err.status} ${err.statusText}`
-          );
-          expect(err.status).toEqual(404);
-        }
-      );
-    service
-      .getValidationResult('2222')
-      .pipe(finalize(() => done()))
-      .subscribe(
-        (result) => {
-          expect(result).toBeFalse();
-        },
-        (err: HttpErrorResponse) => {
-          console.log(
-            `getValidationResult('2222'): ${err.status} ${err.statusText}`
-          );
-          expect(err.status).toEqual(404);
-        }
-      );
+    service.getValidationResult('1111').subscribe((result) => {
+      expect(result).toBeFalse();
+      done();
+    }, done.fail);
+
+    service.getValidationResult('2222').subscribe((result) => {
+      expect(result).toBeFalse();
+      done();
+    }, done.fail);
   });
 
   it('#getValidationResult should return true from observable', (done: DoneFn) => {
-    service
-      .getValidationResult('1234')
-      .pipe(finalize(() => done()))
-      .subscribe(
-        (result) => {
-          expect(result).toBeTrue();
-        },
-        (err: HttpErrorResponse) => {
-          console.log(
-            `getValidationResult('1234'): ${err.status} ${err.statusText}`
-          );
-          expect(err.status).toEqual(404);
-        }
-      );
+    service.getValidationResult('1234').subscribe((result) => {
+      expect(result).toBeTrue();
+      done();
+    }, done.fail);
   });
 });
