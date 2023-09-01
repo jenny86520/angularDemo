@@ -8,6 +8,7 @@ import {
   Subject,
   of,
 } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -58,6 +59,9 @@ export class ObservableService {
         console.log('Finished!');
       },
     });
+    this.normalObservable
+      .pipe(finalize(() => console.log('Finished!')))
+      .subscribe((num) => console.log(num));
   }
   //#endregion
 
