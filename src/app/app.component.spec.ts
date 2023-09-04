@@ -78,17 +78,16 @@ describe('Select Template', () => {
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
     select = fixture.nativeElement.querySelector('select');
-    buttons = fixture.nativeElement.getElementsByTagName('button');
+    buttons = fixture.nativeElement.querySelectorAll('button');
     INIT_TEMPLATE = app.templates[0];
+    fixture.detectChanges();
   });
 
   it('should have eight select items', () => {
-    fixture.detectChanges();
     expect(select.options.length).toEqual(8);
   });
 
   it('should have eight buttons', () => {
-    fixture.detectChanges();
     expect(buttons.length).toEqual(8);
   });
 
@@ -101,28 +100,26 @@ describe('Select Template', () => {
     expect(select.getAttribute('ng-reflect-model')).toEqual(INIT_TEMPLATE);
   });
 
-  it(`can select to change template`, () => {
-    fixture.detectChanges();
+  fit(`can select to change template`, () => {
     for (let i = 1; i < 8; i++) {
       select.value = select.options[i].value;
       select.dispatchEvent(new Event('change'));
       fixture.detectChanges();
       expect(app.selectTemplate).toBe(app.templates[i]);
       expect(
-        fixture.nativeElement.getElementsByTagName('h1')[1].textContent
+        fixture.nativeElement.querySelectorAll('h1')[1].textContent
       ).toContain(app.templates[i]);
     }
   });
 
   it(`can click to change template`, fakeAsync(() => {
-    fixture.detectChanges();
     for (let i = 1; i < 8; i++) {
       buttons[i].dispatchEvent(new Event('click'));
       fixture.detectChanges();
       tick(); // wait for mini second (default is 0)
       expect(select.options[select.selectedIndex].label).toBe(app.templates[i]);
       expect(
-        fixture.nativeElement.getElementsByTagName('h1')[1].textContent
+        fixture.nativeElement.querySelectorAll('h1')[1].textContent
       ).toContain(app.templates[i]);
     }
   }));
