@@ -77,10 +77,10 @@ describe('Select Template', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
+    fixture.detectChanges();
     select = fixture.nativeElement.querySelector('select');
     buttons = fixture.nativeElement.querySelectorAll('button');
     INIT_TEMPLATE = app.templates[0];
-    fixture.detectChanges();
   });
 
   it('should have eight select items', () => {
@@ -100,7 +100,7 @@ describe('Select Template', () => {
     expect(select.getAttribute('ng-reflect-model')).toEqual(INIT_TEMPLATE);
   });
 
-  fit(`can select to change template`, () => {
+  it(`can select to change template`, () => {
     for (let i = 1; i < 8; i++) {
       select.value = select.options[i].value;
       select.dispatchEvent(new Event('change'));
