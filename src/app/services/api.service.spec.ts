@@ -1,8 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ApiService } from './api.service';
-import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
-import { finalize } from 'rxjs/operators';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ApiService', () => {
   let service: ApiService;

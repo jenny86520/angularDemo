@@ -5,6 +5,7 @@ import { PasswordValidator } from './validator.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 import { ApiService } from './api.service';
+import { cold, getTestScheduler } from 'jasmine-marbles';
 
 describe('PasswordValidator', () => {
   let service: PasswordValidator;
@@ -85,5 +86,35 @@ describe('PasswordValidator SPY DI Test Use TestBed', () => {
     expect(apiServiceSpy.getValidationResult.calls.count())
       .withContext('spy method was called once')
       .toBe(1);
+  });
+});
+
+// 練習 SPY DI - use jasmine-marbles pakage
+describe('PasswordValidator SPY DI Test Use jasmine-marbles pakage', () => {
+  let service: PasswordValidator;
+  let apiServiceSpy: jasmine.SpyObj<ApiService>;
+  let MSG: string = 'call success!';
+
+  beforeEach(() => {
+    const spy = jasmine.createSpyObj('ApiService', ['getAsyncData']);
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule, ReactiveFormsModule],
+      providers: [PasswordValidator, { provide: ApiService, useValue: spy }],
+    });
+    service = TestBed.inject(PasswordValidator);
+    apiServiceSpy = TestBed.inject(ApiService) as jasmine.SpyObj<ApiService>;
+  });
+
+  it('should show data after get (marbles)', () => {
+    // observable test value and complete(), after delay
+    const m$ = cold('---x|', { x: MSG }, new Error('ApiService test failure'));
+    apiServiceSpy.getAsyncData.and.returnValue(m$);
+
+    service.ngOnInit();
+    expect(service.log).withContext('should show empty').toBe('');
+
+    getTestScheduler().flush(); // flush the observables
+
+    expect(service.log).withContext(`should show '${MSG}'`).toBe(MSG);
   });
 });

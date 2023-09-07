@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Person } from '../interfaces/person.interface';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, defer, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -30,5 +30,9 @@ export class ApiService {
 
   getValidationResult(value: string): Observable<boolean> {
     return of(!['1111', '2222'].includes(value));
+  }
+
+  getAsyncData() {
+    return defer(() => Promise.resolve(''));
   }
 }
