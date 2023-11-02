@@ -12,7 +12,7 @@ import { By } from '@angular/platform-browser';
 })
 class TestComponent {}
 
-fdescribe('HighlightDirective', () => {
+describe('HighlightDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let highlightDes: DebugElement[];
   let noHighlightDe: DebugElement;
