@@ -1,6 +1,6 @@
 import { WordPipe } from './word.pipe';
 
-fdescribe('WordPipe', () => {
+describe('WordPipe', () => {
   let pipe: WordPipe;
   beforeEach(() => {
     pipe = new WordPipe();
